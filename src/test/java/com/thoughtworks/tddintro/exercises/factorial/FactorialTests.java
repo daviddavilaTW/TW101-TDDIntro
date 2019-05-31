@@ -1,4 +1,5 @@
 package com.thoughtworks.tddintro.exercises.factorial;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -17,35 +18,54 @@ import static org.junit.Assert.assertThat;
 
 public class FactorialTests {
 
+
     private final Factorial factorial = new Factorial();
 
-    @Test // Make me pass first
-    @Ignore // Remove each @Ignore to allow the test to run
-    public void shouldReturnOneWhenNumberIsOne(){
-        assertThat(new Factorial().compute(1), is(1));
+    @Test
+    public void shouldReturnOneWhenNumberIsOne() {
+        int number = 1;
+        Factorial factorial = new Factorial();
+
+        int factorialResult = factorial.compute(number);
+
+        assertThat(factorialResult,is(1));
     }
 
     @Test
-    @Ignore // Remove each @Ignore to allow the test to run
-    public void shouldReturnTwoWhenNumberIsTwo(){
-        assertThat(factorial.compute(2), is(2));
+    public void shouldReturnTwoWhenNumberIsTwo() {
+        int number = 2;
+        Factorial factorial = new Factorial();
+
+        int factorialResult = factorial.compute(number);
+
+        assertThat(factorialResult,is(2));
     }
 
     @Test
-    @Ignore // Remove each @Ignore to allow the test to run
-    public void shouldReturnOneWhenNumberIsZero(){
-        assertThat(factorial.compute(0), is(1));
+    public void shouldReturnOneWhenNumberIsZero() {
+        int number = 0;
+        Factorial factorial = new Factorial();
+
+        int factorialResult = factorial.compute(number);
+
+        assertThat(factorialResult,is(1));
+
     }
 
     @Test
-    @Ignore // Remove each @Ignore to allow the test to run
-    public void shouldReturnSixWhenNumberIsThree(){
-        assertThat(factorial.compute(3), is(6));
+    public void shouldReturnSixWhenNumberIsThree() {
+        int number = 3;
+        Factorial factorial = new Factorial();
+
+        int factorialResult = factorial.compute(number);
+
+        assertThat(factorialResult,is(6));
+
     }
 
     @Test(expected = IllegalArgumentException.class)
     @Ignore // Remove each @Ignore to allow the test to run
-    public void shouldThrowIllegalArgumentExceptionWhenNumberIsNegative(){
+    public void shouldThrowIllegalArgumentExceptionWhenNumberIsNegative() {
         factorial.compute(-1);
     }
 }
