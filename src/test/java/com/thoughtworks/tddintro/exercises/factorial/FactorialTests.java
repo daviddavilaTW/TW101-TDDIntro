@@ -22,7 +22,7 @@ public class FactorialTests {
     private final Factorial factorial = new Factorial();
 
     @Test
-    public void shouldReturnOneWhenNumberIsOne() {
+    public void shouldReturnOneWhenNumberIsOne() throws NonPositiveNumberException{
         int number = 1;
         Factorial factorial = new Factorial();
 
@@ -32,7 +32,7 @@ public class FactorialTests {
     }
 
     @Test
-    public void shouldReturnTwoWhenNumberIsTwo() {
+    public void shouldReturnTwoWhenNumberIsTwo() throws NonPositiveNumberException{
         int number = 2;
         Factorial factorial = new Factorial();
 
@@ -42,7 +42,7 @@ public class FactorialTests {
     }
 
     @Test
-    public void shouldReturnOneWhenNumberIsZero() {
+    public void shouldReturnOneWhenNumberIsZero() throws  NonPositiveNumberException {
         int number = 0;
         Factorial factorial = new Factorial();
 
@@ -53,7 +53,7 @@ public class FactorialTests {
     }
 
     @Test
-    public void shouldReturnSixWhenNumberIsThree() {
+    public void shouldReturnSixWhenNumberIsThree() throws NonPositiveNumberException {
         int number = 3;
         Factorial factorial = new Factorial();
 
@@ -63,9 +63,12 @@ public class FactorialTests {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    @Ignore // Remove each @Ignore to allow the test to run
-    public void shouldThrowIllegalArgumentExceptionWhenNumberIsNegative() {
-        factorial.compute(-1);
+    @Test(expected = NonPositiveNumberException.class)
+    public void shouldThrowIllegalArgumentExceptionWhenNumberIsNegative()  throws NonPositiveNumberException {
+       int number = -1;
+        Factorial factorial = new Factorial();
+
+       factorial.compute(number);
+
     }
 }
